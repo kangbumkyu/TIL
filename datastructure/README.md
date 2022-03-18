@@ -44,18 +44,19 @@ size_t arr_count = 6;
 
 /* 코드 생략..... */
 
-void insert_at(size_t index, int number) {
+void insert_at(size_t index, int number)
+{
     size_t i;
 
     assert(index <= arr_count);
     assert(arr_count < MAX_SIZE);
 
-    for (i = arr_count; i >= index; i--) {
-        arr[i] = arr[i-1];
+    for (i = arr_count; i > index; i--)
+    {
+        arr[i] = arr[i - 1];
     }
-
-    arr[index] = number;
     arr_count++;
+    arr[index] = number;
 }
 
 /* 코드 생략..... */
@@ -83,14 +84,15 @@ size_t arr_count = 7;
 /* 코드 생략..... */
 
 
-void remove_at(int index) {
-
+void remove_at(size_t index)
+{
     size_t i;
 
-    assert(index < MAX_SIZE);
+    assert(index < arr_count);
 
     arr_count--;
-    for (i = index; i < arr_count; i++) {
+    for (i = index; i < arr_count; i++)
+    {
         arr[i] = arr[i + 1];
     }
 }
@@ -122,7 +124,7 @@ size_t arr_count = 6;
 /* 코드 생략..... */
 
 
-size_t find(int number) {
+size_t find_index_of(int number) {
     size_t i;
     for (i = 0; i < arr_count; i++) {
         if (arr[i] == number) {
@@ -135,8 +137,8 @@ size_t find(int number) {
 /* 코드 생략..... */
 
 
-find(5);  // 4 리턴
-find(10); // -1 리턴
+find_index_of(5);  // 4 리턴
+find_index_of(10); // -1 리턴
 
 ```
 
