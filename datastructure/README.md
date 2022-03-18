@@ -31,6 +31,7 @@
 <br>
 
 ### 배열 삽입
+[소스코드](https://github.com/kangbumkyu/TIL/blob/main/datastructure/array.c#L11)
 
 데이터를 배열에 삽입하려면 삽입할 위치의 요소부터 마지막 요소까지 한칸씩 밀고 삽입해야 한다. 따라서 시간복잡도는 O(N)이다.<br>
 
@@ -70,6 +71,7 @@ insert_at(7, 12); // {1, 10, 2, 3, 4, 5, 6, 12};
 <br>
 
 ### 배열 삭제
+[소스코드](https://github.com/kangbumkyu/TIL/blob/main/datastructure/array.c#L26)
 
 배열에서 데이터를 삭제하려면 삭제할 인덱스 다음 요소부터 끝까지 앞으로 한 칸씩 이동해주면 된다. 데이터를 하나씩 앞으로 이동시켜야 함으로 시간복잡도는 O(N)이다.<br>
 
@@ -110,6 +112,7 @@ remove_at(0); // {2, 4, 5, 6, 7}
 <br>
 
 ### 배열 검색
+[소스코드](https://github.com/kangbumkyu/TIL/blob/main/datastructure/array.c#L39)
 
 배열에서 데이터를 검색하려면 배열의 첫번째 요소부터 끝까지 차례대로 방문하면서 찾고자 하는 값이 있는지 확인하면 된다. 첫번째 요소부터 최대 끝까지 방문해야 함으로 시간 복잡도는 O(N)이다.<br>
 
