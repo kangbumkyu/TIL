@@ -11,7 +11,18 @@
 
 <br><br>
 
-## 배열(Array)
+
+## Table of Contents
+0. [Intro](#자료구조)  
+1. [배열 Array](#배열-array)  
+2. [스택 Stack](#스택-stack)  
+3. [큐 Queue](#큐-queue)
+4. [연결 리스트 Linked List](#연결-리스트-linked-list)
+5. [해시 테이블 Hash Table](#해시-테이블-hash-table)
+7. [트리 Tree](#트리-tree)
+8. [그래프 Graph](#그래프-graph)
+
+## 배열 (Array)
 
 배열은 여러 개의 자료를 하나의 메모리 공간 안에 순서대로 저장해 놓는 구조이다. 각각의 데이터는 index로 접근이 가능하다.
 
@@ -234,3 +245,20 @@ pop을 할 때 O(N), push할 때 O(N) 만큼 걸려서 시간 복잡도는 총 O
 ### 큐 검색
 
 스택과는 다르게 중간에 데이터를 찾아도 전부 다 dequeue를 하고 다시 enqueue를 해야 한다. 검색 시간 복잡도는 O(N) 이다.
+
+<br><br>
+
+## 연결 리스트 (Linked List)
+
+<br><br>
+
+## 해시 테이블 (Hash Table)
+
+<br><br>
+
+## 트리 (Tree)
+
+<br><br>
+
+## 그래프 (Graph)
+
