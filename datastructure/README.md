@@ -211,43 +211,6 @@ pop(); // {}
 스택 안에 어떤 데이터가 들어있는지 검색하려면 위에서 부터 pop을 해야 한다. 만약 찾았으면 pop을 했던 데이터를 다시 push해주면 된다.  
 pop을 할 때 O(N), push할 때 O(N) 만큼 걸려서 시간 복잡도는 총 O(2N)이지만 보통 상수는 제거를 하니깐 O(N)이다.
 
-```
-enum { MAX_SIZE = 5 };
-
-int stack[MAX_SIZE];
-int temp[MAX_SIZE];
-size_t current_size = 0;
-size_t temp_current_size = 0;
-
-/* 코드 생략 ..... */
-
-int find(int number) {
-    int n;
-
-    while (current_size > 0) {
-        if (pop() == number) {
-            break;
-        }
-        temp[temp_current_size++] = n;
-    }
-
-    while (temp_current_size !== 0) {
-
-    }
-
-
-    return stack[--current_size];
-}
-
-/* 코드 생략 ..... */
-/* stack = {1, 2, 3, 4, 5}; */
-
-
-find(3);
-
-
-```
-
 <br><br>
 
 ## 큐 (Queue)
@@ -260,12 +223,14 @@ find(3);
 
 큐에 맨 마지막에 삽입하면 된다. 따라서 시간 복잡도는 O(1) 이다.
 
-```
-
-```
-
 <br>
 
 ### 큐 삭제
 
 큐에 첫 번째 요소를 제거하면 된다. 시간 복잡도는 O(1) 이다.
+
+<br>
+
+### 큐 검색
+
+스택과는 다르게 중간에 데이터를 찾아도 전부 다 dequeue를 하고 다시 enqueue를 해야 한다. 검색 시간 복잡도는 O(N) 이다.
