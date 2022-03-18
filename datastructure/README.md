@@ -174,23 +174,20 @@ printf("%d", arr[3]); // 6
 배열의 맨 마지막 위치에 삽입하면 되기 때문에 시간 복잡도는 O(1)이다.
 
 ```
-enum { MAX_SIZE = 5 };
-
-int stack[MAX_SIZE];
-size_t current_size = 0;
 
 /* 코드 생략 ..... */
 
-void push(int number) {
-    assert(current_size < MAX_SIZE);
-    stack[current_size++] = number;
+void push(int arr[], size_t *size, int number)
+{
+    assert(*size < MAX_SIZE);
+    arr[(*size)++] = number;
 }
 
 /* 코드 생략 ..... */
 
-push(1); // {1}
-push(2); // {1, 2}
-push(3); // {1, 2, 3}
+push(stack, &current_size, 1); // {1}
+push(stack, &current_size, 2); // {1, 2}
+push(stack, &current_size, 3); // {1, 2, 3}
 ```
 
 <br>
@@ -200,24 +197,20 @@ push(3); // {1, 2, 3}
 스택 삭제는 배열의 맨 마지막 요소를 제거함으로 시간 복잡도는 O(1)이다.
 
 ```
-enum { MAX_SIZE = 5 };
-
-int stack[MAX_SIZE];
-size_t current_size = 0;
-
 /* 코드 생략 ..... */
 
-int pop(void) {
-    assert(current_size > 0);
+int pop(int arr[], size_t *size)
+{
+    assert(is_empty(*size) == FALSE);
 
-    return stack[--current_size];
+    return arr[--(*size)];
 }
 
 /* 코드 생략 ..... */
 
-pop(); // {1, 2}
-pop(); // {1}
-pop(); // {}
+pop(stack, &current_size); // {1, 2}
+pop(stack, &current_size); // {1}
+pop(stack, &current_size); // {}
 ```
 
 <br>
@@ -227,6 +220,45 @@ pop(); // {}
 스택 안에 어떤 데이터가 들어있는지 검색하려면 위에서 부터 pop을 해야 한다. 만약 찾았으면 pop을 했던 데이터를 다시 push해주면 된다.  
 pop을 할 때 O(N), push할 때 O(N) 만큼 걸려서 시간 복잡도는 총 O(2N)이지만 보통 상수는 제거를 하니깐 O(N)이다.
 
+```
+/* 코드 생략 ..... */
+
+int find(int arr[], size_t size, int number)
+{
+    int temp;
+    int temp_stack[MAX_SIZE];
+    int ret = FALSE;
+    size_t temp_current_size = 0;
+
+    // stack이 empty 될 때 까지 pop하기
+    while (is_empty(size) == FALSE)
+    {
+        temp = pop(arr, &size);
+        push(temp_stack, &temp_current_size, temp);
+
+        if (temp == number)
+        {
+            ret = TRUE;
+            break;
+        }
+    }
+
+    // pop된 데이터를 다시 stack에 push하기
+    while (is_empty(temp_current_size) == FALSE)
+    {
+        temp = pop(temp_stack, &temp_current_size);
+        push(arr, &size, temp);
+    }
+
+    return ret;
+}
+
+/* 코드 생략 ..... */
+
+printf("%d\n", find(stack, current_size, 1));
+printf("%d\n", find(stack, current_size, 10));
+
+```
 <br><br>
 
 ## 큐 (Queue)
