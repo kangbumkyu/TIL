@@ -11,7 +11,7 @@
 
 <br><br>
 
-## 배열
+## 배열(Array)
 
 배열은 여러 개의 자료를 하나의 메모리 공간 안에 순서대로 저장해 놓는 구조이다. 각각의 데이터는 index로 접근이 가능하다.
 
@@ -26,8 +26,6 @@
 <img width="400" alt="스크린샷 2022-03-18 오후 2 23 12" src="https://user-images.githubusercontent.com/42689355/158942489-58b06eb7-1980-4c23-9b1a-39cb8cb2cfa4.png"><br>
 
 <img width="400" alt="스크린샷 2022-03-18 오후 2 20 48" src="https://user-images.githubusercontent.com/42689355/158942275-37da31b2-d014-4e4d-9c1d-15f78ee43c57.png">
-
-
 
 ```
 int arr[MAX_SIZE] = {1, 2, 3, 4, 5, 6};
@@ -61,13 +59,11 @@ insert_at(7, 12); // {1, 10, 2, 3, 4, 5, 6, 12};
 
 ### 배열 삭제
 
-
 배열에서 데이터를 삭제하려면 삭제할 인덱스 다음 요소부터 끝까지 앞으로 한 칸씩 이동해주면 된다. 데이터를 하나씩 앞으로 이동시켜야 함으로 시간복잡도는 O(N)이다.<br>
 
 <img width="400" alt="스크린샷 2022-03-18 오후 2 27 33" src="https://user-images.githubusercontent.com/42689355/158942885-254b439a-ea79-4bf7-9cc6-983f07180a5a.png"><br>
 
 <img width="400" alt="스크린샷 2022-03-18 오후 2 28 59" src="https://user-images.githubusercontent.com/42689355/158943046-6e291812-df8e-4941-ab43-1e6c67380391.png">
-
 
 ```
 int arr[MAX_SIZE] = {1, 2, 3, 4, 5, 6, 7};
@@ -107,7 +103,6 @@ remove_at(0); // {2, 4, 5, 6, 7}
 <img width="400" alt="스크린샷 2022-03-18 오후 2 33 52" src="https://user-images.githubusercontent.com/42689355/158943552-4c992bde-6566-4813-95a2-29973ffb2d39.png"><br>
 
 <img width="400" alt="스크린샷 2022-03-18 오후 2 34 35" src="https://user-images.githubusercontent.com/42689355/158943606-e8fbca5b-21a6-4ad3-9409-c80ece55e2e1.png">
-
 
 ```
 int arr[MAX_SIZE] = {1, 2, 3, 4, 5, 6};
@@ -149,3 +144,128 @@ arr[3] = 6;
 
 printf("%d", arr[3]); // 6
 ```
+
+<br><br>
+
+## 스택 (Stack)
+
+가장 먼저 삽입(Push)된 데이터가 제일 마지막에 삭제(Pop)되는 자료구조이다.
+
+<br><br>
+
+### 스택 삽입
+
+배열의 맨 마지막 위치에 삽입하면 되기 때문에 시간 복잡도는 O(1)이다.
+
+```
+enum { MAX_SIZE = 5 };
+
+int stack[MAX_SIZE];
+size_t current_size = 0;
+
+/* 코드 생략 ..... */
+
+void push(int number) {
+    assert(current_size < MAX_SIZE);
+    stack[current_size++] = number;
+}
+
+/* 코드 생략 ..... */
+
+push(1); // {1}
+push(2); // {1, 2}
+push(3); // {1, 2, 3}
+```
+
+<br>
+
+### 스택 삭제
+
+스택 삭제는 배열의 맨 마지막 요소를 제거함으로 시간 복잡도는 O(1)이다.
+
+```
+enum { MAX_SIZE = 5 };
+
+int stack[MAX_SIZE];
+size_t current_size = 0;
+
+/* 코드 생략 ..... */
+
+int pop(void) {
+    assert(current_size > 0);
+
+    return stack[--current_size];
+}
+
+/* 코드 생략 ..... */
+
+pop(); // {1, 2}
+pop(); // {1}
+pop(); // {}
+```
+
+<br>
+
+### 스택 검색
+
+스택 안에 어떤 데이터가 들어있는지 검색하려면 위에서 부터 pop을 해야 한다. 만약 찾았으면 pop을 했던 데이터를 다시 push해주면 된다.  
+pop을 할 때 O(N), push할 때 O(N) 만큼 걸려서 시간 복잡도는 총 O(2N)이지만 보통 상수는 제거를 하니깐 O(N)이다.
+
+```
+enum { MAX_SIZE = 5 };
+
+int stack[MAX_SIZE];
+int temp[MAX_SIZE];
+size_t current_size = 0;
+size_t temp_current_size = 0;
+
+/* 코드 생략 ..... */
+
+int find(int number) {
+    int n;
+
+    while (current_size > 0) {
+        if (pop() == number) {
+            break;
+        }
+        temp[temp_current_size++] = n;
+    }
+
+    while (temp_current_size !== 0) {
+
+    }
+
+
+    return stack[--current_size];
+}
+
+/* 코드 생략 ..... */
+/* stack = {1, 2, 3, 4, 5}; */
+
+
+find(3);
+
+
+```
+
+<br><br>
+
+## 큐 (Queue)
+
+가장 먼저 삽입된(enqueue) 데이터가 가장 먼저 삭제되는(dequeue) 자료구조이다.
+
+<br>
+
+### 큐 삽입
+
+큐에 맨 마지막에 삽입하면 된다. 따라서 시간 복잡도는 O(1) 이다.
+
+```
+
+```
+
+<br>
+
+### 큐 삭제
+
+큐에 첫 번째 요소를 제거하면 된다. 시간 복잡도는 O(1) 이다.
