@@ -270,13 +270,40 @@ printf("%d\n", find(stack, current_size, 10));
 ### 큐 삽입
 
 큐에 맨 마지막에 삽입하면 된다. 따라서 시간 복잡도는 O(1) 이다.
+```
+void enqueue(int number)
+{
+    assert(queue_count < MAX_SIZE);
 
+    queue[rear] = number;
+    rear = (rear + 1) % MAX_SIZE;
+    queue_count++;
+}
+```
 <br>
 
 ### 큐 삭제
 
 큐에 첫 번째 요소를 제거하면 된다. 시간 복잡도는 O(1) 이다.
+```
+int is_empty()
+{
+    return queue_count == 0;
+}
 
+int dequeue(void)
+{
+    int ret;
+
+    assert(is_empty() == FALSE);
+
+    ret = queue[front];
+    queue_count--;
+    front = (front + 1) % MAX_SIZE;
+
+    return ret;
+}
+```
 <br>
 
 ### 큐 검색
