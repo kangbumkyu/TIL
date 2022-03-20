@@ -11,16 +11,16 @@
 
 <br><br>
 
-
 ## Table of Contents
-0. [Intro](#자료구조)  
-1. [배열 Array](#배열-array)  
-2. [스택 Stack](#스택-stack)  
+
+0. [Intro](#자료구조)
+1. [배열 Array](#배열-array)
+2. [스택 Stack](#스택-stack)
 3. [큐 Queue](#큐-queue)
 4. [연결 리스트 Linked List](#연결-리스트-linked-list)
 5. [해시 테이블 Hash Table](#해시-테이블-hash-table)
-7. [트리 Tree](#트리-tree)
-8. [그래프 Graph](#그래프-graph)
+6. [트리 Tree](#트리-tree)
+7. [그래프 Graph](#그래프-graph)
 
 ## 배열 (Array)
 
@@ -31,6 +31,7 @@
 <br>
 
 ### 배열 삽입
+
 [소스코드](https://github.com/kangbumkyu/TIL/blob/main/datastructure/array.c#L11)
 
 데이터를 배열에 삽입하려면 삽입할 위치의 요소부터 마지막 요소까지 한칸씩 밀고 삽입해야 한다. 따라서 시간복잡도는 O(N)이다.<br>
@@ -71,6 +72,7 @@ insert_at(7, 12); // {1, 10, 2, 3, 4, 5, 6, 12};
 <br>
 
 ### 배열 삭제
+
 [소스코드](https://github.com/kangbumkyu/TIL/blob/main/datastructure/array.c#L26)
 
 배열에서 데이터를 삭제하려면 삭제할 인덱스 다음 요소부터 끝까지 앞으로 한 칸씩 이동해주면 된다. 데이터를 하나씩 앞으로 이동시켜야 함으로 시간복잡도는 O(N)이다.<br>
@@ -112,6 +114,7 @@ remove_at(0); // {2, 4, 5, 6, 7}
 <br>
 
 ### 배열 검색
+
 [소스코드](https://github.com/kangbumkyu/TIL/blob/main/datastructure/array.c#L39)
 
 배열에서 데이터를 검색하려면 배열의 첫번째 요소부터 끝까지 차례대로 방문하면서 찾고자 하는 값이 있는지 확인하면 된다. 첫번째 요소부터 최대 끝까지 방문해야 함으로 시간 복잡도는 O(N)이다.<br>
@@ -259,6 +262,7 @@ printf("%d\n", find(stack, current_size, 1));
 printf("%d\n", find(stack, current_size, 10));
 
 ```
+
 <br><br>
 
 ## 큐 (Queue)
@@ -270,6 +274,7 @@ printf("%d\n", find(stack, current_size, 10));
 ### 큐 삽입
 
 큐에 맨 마지막에 삽입하면 된다. 따라서 시간 복잡도는 O(1) 이다.
+
 ```
 void enqueue(int number)
 {
@@ -280,11 +285,13 @@ void enqueue(int number)
     queue_count++;
 }
 ```
+
 <br>
 
 ### 큐 삭제
 
 큐에 첫 번째 요소를 제거하면 된다. 시간 복잡도는 O(1) 이다.
+
 ```
 int is_empty()
 {
@@ -304,6 +311,7 @@ int dequeue(void)
     return ret;
 }
 ```
+
 <br>
 
 ### 큐 검색
@@ -313,6 +321,28 @@ int dequeue(void)
 <br><br>
 
 ## 연결 리스트 (Linked List)
+
+연결 리스트는 배열, 스택, 큐 처럼 데이터가 메모리 공간에 연속적으로 저장되어 있지 않고 여러군데 흩어져서 저장되어 있는 자료구조이다. 이게 가능한 이유는 메모리를 동적으로 할당하기 때문이다. 메모리를 동적으로 할당해서 데이터를 저장한다. 데이터가 저장된 공간을 노드라고 하고, 이 노드끼리 연결이 되어 있다고 해서 연결 리스트라고 부른다.
+
+노드에는 다음에 연결된 노드의 메모리 주소를 저장하는 포인터 변수가 있다. 따라서 노드끼리 연결이 가능해진다. 마지막 노드의 다음 노드는 존재하지 않기 때문에 노드의 주소를 저장하는 포인터 변수엔 NULL이 들어간다.
+
+<br>
+
+### 연결 리스트 삽입
+
+어디에 삽입해야 할 지 알고 있다면 노드를 삽입의 시간 복잡도는 O(1)이다. 배열처럼 다른 요소를 밀(shift) 필요가 없다.
+
+<br>
+
+### 연결 리스트 삭제
+
+삭제할 위치를 알고 있다면 삭제 시간 복잡도는 O(1)이다. 삭제 역시 배열처럼 다른 요소를 당길 필요가 없다.
+
+<br>
+
+### 연결 리스트 검색
+
+연결 리스트에서 검색은 첫 노드(헤드) 부터 찾을 때까지 검색해야 하기 때문에 시간 복잡도는 O(N)이다. 배열은 인덱스로 검색을 했지만 연결 리스트는 노드가 메모리 상에 뿔뿔이 흝어져 있기 때문에 인덱스로 접근은 불가능하고 노드의 다음 주소로 접근해서 데이터를 검색해야 한다.
 
 <br><br>
 
@@ -325,4 +355,3 @@ int dequeue(void)
 <br><br>
 
 ## 그래프 (Graph)
-
