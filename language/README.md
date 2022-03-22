@@ -5,5 +5,10 @@ C언어 관련 문법은 [노션](https://tame-lord-6ab.notion.site/C-952aae6908
 
 ## 목차
 
-- [언어](#언어)
-  - [목차](#목차)
+- [인트로](#언어)
+- [목차](#목차)
+- [if문은 어떻게 작동할까?](#if문은-어떻게-작동할까?)
+
+### [if문은 어떻게 작동할까?](https://tame-lord-6ab.notion.site/If-12e22f2cad61414fb1dfa279462b33ce) | 
+
+
