@@ -168,7 +168,10 @@ printf("%d", arr[3]); // 6
 
 ## 스택 (Stack)
 
-가장 먼저 삽입(Push)된 데이터가 제일 마지막에 삭제(Pop)되는 자료구조이다.
+가장 먼저 삽입(Push)된 데이터가 제일 마지막에 삭제(Pop)되는 자료구조이다.<br>
+
+<img width="700" alt="스크린샷 2022-03-22 오후 8 42 37" src="https://user-images.githubusercontent.com/42689355/159474203-75a40c1a-18ce-47a6-9c5a-4ed1eab2e30a.png">
+
 
 <br><br>
 
@@ -267,7 +270,10 @@ printf("%d\n", find(stack, current_size, 10));
 
 ## 큐 (Queue)
 
-가장 먼저 삽입된(enqueue) 데이터가 가장 먼저 삭제되는(dequeue) 자료구조이다.
+가장 먼저 삽입된(enqueue) 데이터가 가장 먼저 삭제되는(dequeue) 자료구조이다.<br>
+
+<img width="462" alt="스크린샷 2022-03-22 오후 8 46 03" src="https://user-images.githubusercontent.com/42689355/159474836-452390a4-797a-4c8b-8f4f-a73d75a01752.png">
+
 
 <br>
 
@@ -331,6 +337,8 @@ int dequeue(void)
 <img width="540" alt="스크린샷 2022-03-20 오후 10 51 27" src="https://user-images.githubusercontent.com/42689355/159165696-b9247ed2-3412-43b5-8d0c-16fb3e888efb.png">
 
 연결 리스트는 배열이 지닌 한계를 없애고자 사용하는 자료구조다. 따라서 배열의 최대길이가 정해져 있지 않거나 삽입, 삭제가 자주 일어나는 경우 사용한다. (하지만 요즘엔 동적 할당 배열을 자주 사용한다고 한다.)
+
+[소스코드](https://github.com/kangbumkyu/TIL/blob/main/datastructure/linked_list.c)
 
 <br>
 
