@@ -5,3 +5,4 @@
 ## 목차
 - [언어 (Language)](https://github.com/kangbumkyu/TIL/tree/main/language)
 - [자료구조 (Data Structure)](https://github.com/kangbumkyu/TIL/tree/main/datastructure)
+- [알고리즘 (Algorithm)](https://github.com/kangbumkyu/TIL/tree/main/algorithm)
