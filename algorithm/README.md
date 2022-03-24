@@ -112,3 +112,6 @@
 
 - 퀵 정렬은 고정값을 하나 잡아서 고정값 보다 작으면 왼쪽, 크면 오른쪽에 위치시키면서 정렬하는 방법이다.
 - 한 번 정렬시키고 그 다음엔 좌측 우측을 분할해서 정렬을 하게 되서 O(logN) 깊이 만큼 재귀를 돌아 총 시간 복잡도는 N \* logN = O(NlogN) 이 된다.
+<br>
+
+[소스코드](https://github.com/kangbumkyu/TIL/blob/main/algorithm/sorting/quick.c)
