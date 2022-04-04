@@ -1,5 +1,6 @@
 # 알고리즘
 
+- [프로그래머스 문제](https://github.com/kangbumkyu/TIL/tree/main/algorithm/programmers)
 - [소수 판별](https://tame-lord-6ab.notion.site/40528f8f50544c20ab5ba8882fa6a1be)
 - [약수 구하기](https://tame-lord-6ab.notion.site/95cf543fa7b24730b78c37d7a35f3c73)
 - [최소 공배수, 최대 공약수](https://tame-lord-6ab.notion.site/30c136012c534339b63b349ffc701933)
